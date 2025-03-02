@@ -1,7 +1,12 @@
-p{
+.heading{
     background-color: #17799c;
     color: white;
     font-size: 100px;
     border-radius: 14px;
     font-weight: 700;
+}
+.description{
+    font-size: 20px;
+    word-spacing: 3px;
+    font-weight: bold;
 }
