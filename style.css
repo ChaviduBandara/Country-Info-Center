@@ -10,3 +10,16 @@
     word-spacing: 3px;
     font-weight: bold;
 }
+.btn-group{
+    background-color: #17799c;
+}
+.form-control::placeholder{
+    font-size: 20px;
+}
+
+th,td {
+    width: 3%;
+}
+th{
+    font-size: 20px;
+}
