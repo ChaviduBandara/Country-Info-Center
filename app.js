@@ -19,16 +19,8 @@ function showsInfo() {
                             <td>${element.name.common}</td>
                             <td>${element.capital}</td>
                             <td>${element.region}</td>
-                            <td>${
-                              element.currencies
-                                ? Object.values(element.currencies)[0].name
-                                : "N/A"
-                            }</td>
-                            <td>${
-                              element.languages
-                                ? Object.values(element.languages).join(", ")
-                                : "N/A"
-                            }</td>
+                            <td>${element.currencies? Object.values(element.currencies)[0].name: "N/A"}</td>
+                            <td>${element.languages? Object.values(element.languages).join(", "): "N/A"}</td>
                             <td>${element.area}</td>
                             <td>${element.population}</td>
                        </tr>`;
