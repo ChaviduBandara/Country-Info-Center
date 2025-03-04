@@ -6,8 +6,7 @@ function showsInfo() {
 
       const result = document.getElementById("sss").value;
 
-      
-      let tableInfo = document.getElementById("tbl");
+      let table = document.getElementById("tbl");
 
       let tblContent = `<tr>
                         <th>Name</th>
@@ -29,6 +28,7 @@ function showsInfo() {
                               <td>${element.area}</td>
                               <td>${element.population}</td>
                          </tr>`;
+                         
         }) : data.forEach((element) => {
           tblContent += `<tr>
                               <td>${element.name.common}</td>
@@ -41,7 +41,7 @@ function showsInfo() {
                          </tr>`;
         });;
 
-      tableInfo.innerHTML = tblContent;
+      table.innerHTML = tblContent;
     });
 }
 
