@@ -21,10 +21,11 @@
             one place. Start searching now and discover the world at your fingertips!" Let me know if you need any tweaks!
         </p>
     </div>
+    <button class="btn text-white pe-5 ps-5" type="submit" style="background-color: #17799c; font-size: 25px;" onclick="showsInfo()">Fetch data</button>
     <div class="d-flex justify-content-center">
         <div class="input-group flex-nowrap mb-5" style="max-width: 500px;">
-            <input type="text" class="form-control me-4 p-2" placeholder="  enter the country" aria-label="Username" aria-describedby="addon-wrapping" style="font-size: 25px;">
-            <button class="btn text-white pe-5 ps-5" type="submit" style="background-color: #17799c; font-size: 25px;" onclick="showsInfo()">Submit</button>
+            <input type="text" class="form-control me-4 p-2" id="sss" placeholder="  enter the country" aria-label="Username" aria-describedby="addon-wrapping" style="font-size: 25px;">
+            <button class="btn text-white pe-5 ps-5" type="submit" style="background-color: #17799c; font-size: 25px;" onclick="myFunc()">Submit</button>
         </div>
     </div>
     <table class="table table-striped text-center mt-5" id="tbl">
@@ -39,6 +40,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>
