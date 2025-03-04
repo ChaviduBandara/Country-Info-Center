@@ -4,7 +4,7 @@ function showsInfo() {
     .then((data) => {
       console.log(data);
 
-      const result = document.getElementById("sss").value;
+      const result = document.getElementById("input").value;
 
       let table = document.getElementById("tbl");
 
@@ -18,33 +18,48 @@ function showsInfo() {
                         <th>Population</th>
                       </tr>`;
 
-        result != "" ? data.filter((ele) => ele.name.common === result).forEach((element) => {
-          tblContent += `<tr>
+      // ternary operator ekak use karanne; id result is not an empty string ..........
+      result != "" ? data
+            .filter((info) => info.name.common === result)
+            .forEach((element) => {
+              tblContent += `<tr>
                               <td>${element.name.common}</td>
                               <td>${element.capital}</td>
                               <td>${element.region}</td>
-                              <td>${element.currencies? Object.values(element.currencies)[0].name: "N/A"}</td>
-                              <td>${element.languages? Object.values(element.languages).join(", "): "N/A"}</td>
+                              <td>${element.currencies ? Object.values(element.currencies)[0].name: "N/A"}</td>
+                              <td>${element.languages ? Object.values(element.languages).join(", "): "N/A"}</td>
                               <td>${element.area}</td>
                               <td>${element.population}</td>
                          </tr>`;
-                         
-        }) : data.forEach((element) => {
-          tblContent += `<tr>
-                              <td>${element.name.common}</td>
-                              <td>${element.capital}</td>
-                              <td>${element.region}</td>
-                              <td>${element.currencies? Object.values(element.currencies)[0].name: "N/A"}</td>
-                              <td>${element.languages? Object.values(element.languages).join(", "): "N/A"}</td>
-                              <td>${element.area}</td>
-                              <td>${element.population}</td>
-                         </tr>`;
-        });;
+
+              // else do this,
+            })
+        : alert("Please enter the name of the country!");
 
       table.innerHTML = tblContent;
     });
 }
 
+// To show all the names of the countries
+function showAllTheCountries() {
+  fetch("https://restcountries.com/v3.1/all")
+    .then((res) => res.json())
+    .then((data) => {
+      let table = document.getElementById("tbl");
+
+      let tblContent = `<tr>
+                        <th>Names of the Countries</th>
+                      </tr>`;
+
+      data.forEach((element) => {
+        tblContent += `<tr>
+                            <td>${element.name.common}</td>      
+                        </tr>`;
+      });
+
+      table.innerHTML = tblContent;
+    });
+}
 
 
 // const myFunc = async (e) => {
@@ -53,11 +68,10 @@ function showsInfo() {
 
 //   const sss = await fetch("https://restcountries.com/v3.1/all")
 //     .then((res) => res.json())
-//     .then((data) => 
+//     .then((data) =>
 //       data.filter((ele) => ele.name.common === result)
 //     )
 
 //     console.log(sss);
-    
-  
+
 // }
