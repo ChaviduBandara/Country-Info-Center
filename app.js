@@ -20,10 +20,10 @@ function showsInfo() {
 
       // ternary operator ekak use karanne; id result is not an empty string ..........
       result != "" ? data
-            .filter((info) => info.name.common === result)
+            .filter((info) => info.name.common.toLowerCase() === result.toLowerCase())
             .forEach((element) => {
               tblContent += `<tr>
-                              <td>${element.name.common}</td>
+                              <td><img src="${element.flags.png}" width="50" height="40" style="margin-right: 10px;"> ${element.name.common}</td>
                               <td>${element.capital}</td>
                               <td>${element.region}</td>
                               <td>${element.currencies ? Object.values(element.currencies)[0].name: "N/A"}</td>

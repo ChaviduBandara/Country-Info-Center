@@ -19,7 +19,12 @@
 
 th,td {
     width: 3%;
+    font-size: 20px;
 }
 th{
     font-size: 22px;
+    text-decoration: underline;
+}
+button:hover {
+    transform: scale(1.05);
 }
